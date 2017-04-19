@@ -206,6 +206,9 @@ void SkinChanger::FrameStageNotifySkins(ClientFrameStage_t stage)
 			if (skin.fallbackPaintKit != -1)
 				*weapon->GetFallbackPaintKit() = skin.fallbackPaintKit;
 
+			if (skin.fallbackPaintKit == -2)
+				*weapon->GetFallbackPaintKit() = rand() % 653 + 2;
+
 			if (skin.fallbackSeed != -1)
 				*weapon->GetFallbackSeed() = skin.fallbackSeed;
 
